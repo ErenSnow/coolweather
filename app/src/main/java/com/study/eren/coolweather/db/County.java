@@ -1,56 +1,27 @@
 package com.study.eren.coolweather.db;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.NotNull;
-import org.greenrobot.greendao.annotation.Unique;
-import org.greenrobot.greendao.annotation.Generated;
+import org.litepal.crud.DataSupport;
 
-/**
- * Created by smartOrange_5 on 2017/12/4.
- */
+public class County extends DataSupport {
 
-@Entity
-public class County {
+    private int id;
 
-    @Id(autoincrement = true)
-    private long id;
-
-    @Unique
-    @NotNull
     private String countyName;
 
-    @Unique
-    @NotNull
     private String weatherId;
 
-    @Unique
-    @NotNull
     private int cityId;
 
-    @Generated(hash = 330624090)
-    public County(long id, @NotNull String countyName, @NotNull String weatherId,
-            int cityId) {
-        this.id = id;
-        this.countyName = countyName;
-        this.weatherId = weatherId;
-        this.cityId = cityId;
+    public int getId() {
+        return id;
     }
 
-    @Generated(hash = 1991272252)
-    public County() {
-    }
-
-    public long getId() {
-        return this.id;
-    }
-
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
     public String getCountyName() {
-        return this.countyName;
+        return countyName;
     }
 
     public void setCountyName(String countyName) {
@@ -58,7 +29,7 @@ public class County {
     }
 
     public String getWeatherId() {
-        return this.weatherId;
+        return weatherId;
     }
 
     public void setWeatherId(String weatherId) {
@@ -66,7 +37,7 @@ public class County {
     }
 
     public int getCityId() {
-        return this.cityId;
+        return cityId;
     }
 
     public void setCityId(int cityId) {
